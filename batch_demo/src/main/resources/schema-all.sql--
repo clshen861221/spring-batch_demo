@@ -1,0 +1,16 @@
+--mysql
+DROP TABLE IF EXISTS person;
+CREATE TABLE person  (
+    name VARCHAR(200),
+    age VARCHAR(200),
+    nation VARCHAR(200),
+    address VARCHAR(200)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--oracle
+--CREATE TABLE person  (
+--    name VARCHAR2(200),
+--    age VARCHAR2(200),
+--    nation VARCHAR2(200),
+--    address VARCHAR2(200)
+--);
