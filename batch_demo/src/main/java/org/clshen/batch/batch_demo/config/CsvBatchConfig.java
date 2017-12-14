@@ -40,7 +40,7 @@ public class CsvBatchConfig {
 		// 使用FlatFileItemReader 读取文件
 		FlatFileItemReader<Person> reader = new FlatFileItemReader<Person>();
 		reader.setResource(new ClassPathResource("people.csv"));
-		reader.setLinesToSkip(3);
+		reader.setLinesToSkip(1);
 		// SuffixRecordSeparatorPolicy suffixRecordSeparatorPolicy = new
 		// SuffixRecordSeparatorPolicy();
 		// suffixRecordSeparatorPolicy.setSuffix("|");
