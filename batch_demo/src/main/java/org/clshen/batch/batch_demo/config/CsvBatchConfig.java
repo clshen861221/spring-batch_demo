@@ -41,13 +41,9 @@ public class CsvBatchConfig {
 		GzipReader<Person> reader = new GzipReader<Person>();
 		reader.setResource(new ClassPathResource("people.csv"));
 		reader.setLinesToSkip(1);
-		// SuffixRecordSeparatorPolicy suffixRecordSeparatorPolicy = new
-		// SuffixRecordSeparatorPolicy();
-		// suffixRecordSeparatorPolicy.setSuffix("|");
-		// reader.setRecordSeparatorPolicy(suffixRecordSeparatorPolicy);
 		reader.setLineMapper(new DefaultLineMapper<Person>() {
 			{
-				setLineTokenizer(new DelimitedLineTokenizer() {
+				setLineTokenizer(new DelimitedLineTokenizer("|") {
 					{
 						setNames(new String[] { "name", "age", "nation",
 								"address" });
