@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.clshen.batch.batch_demo.entity.Person;
 import org.clshen.batch.batch_demo.listener.CsvJobListener;
 import org.clshen.batch.batch_demo.processor.CsvItemProcessor;
+import org.clshen.batch.batch_demo.reader.GzipReader;
 import org.clshen.batch.batch_demo.valid.CsvBeanValidator;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -20,7 +21,6 @@ import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
-import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
@@ -38,7 +38,7 @@ public class CsvBatchConfig {
 	@Bean
 	public ItemReader<Person> reader() {
 		// 使用FlatFileItemReader 读取文件
-		FlatFileItemReader<Person> reader = new FlatFileItemReader<Person>();
+		GzipReader<Person> reader = new GzipReader<Person>();
 		reader.setResource(new ClassPathResource("people.csv"));
 		reader.setLinesToSkip(1);
 		// SuffixRecordSeparatorPolicy suffixRecordSeparatorPolicy = new
