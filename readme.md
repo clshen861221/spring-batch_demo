@@ -10,6 +10,6 @@ MediaView Release Notes
 ### Bugs
 ### Change log
 >#### 1.add some paramters for below 3 functions and change data structure from hazelcast response:
-> /campaignratings/api/v5/CampaignPlacementExposure
-> /campaignratings/api/v3/CampaignDMAExposure
-> /campaignratings/api/v4/CampaignExposure
+> /campaignratings/api/v5/CampaignPlacementExposure  
+> /campaignratings/api/v3/CampaignDMAExposure  
+> /campaignratings/api/v4/CampaignExposure  
